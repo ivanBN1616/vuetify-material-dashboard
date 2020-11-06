@@ -1,22 +1,31 @@
 <template>
   <main class="clickable">
     <v-content>
-      <v-container fill-height="fill-height">
-        <v-layout align-center="align-center" justify-center="justify-center">
-          <v-flex class="">
+      <v-container class="fill-height">
+        <v-row
+          align="center"
+          justify="center"
+        >
+          <v-col class="">
             <div class="display-1 mb-3">
-              <v-icon class="mr-2" large="large"></v-icon> My ProTiming
+              <v-icon
+                class="mr-2"
+                large="large"
+              /> My ProTiming
             </div>
             <v-card light="light">
               <v-card-text>
-                <v-form class="login" @click.prevent="login">
+                <v-form
+                  class="login"
+                  @click.prevent="login"
+                >
                   <v-text-field
                     v-model="username"
                     light="light"
                     prepend-icon="person"
                     label="Username"
                     required
-                  ></v-text-field>
+                  />
                   <v-text-field
                     v-model="password"
                     light="light"
@@ -24,30 +33,40 @@
                     label="Password"
                     type="password"
                     required
-                  ></v-text-field>
-                  <p v-if="error" class="error">Has introducido mal el email o la contraseña.</p>
-                  <v-btn block="block" type="submit">Sign in</v-btn>
+                  />
+                  <p
+                    v-if="error"
+                    class="error"
+                  >
+                    Has introducido mal el email o la contraseña.
+                  </p>
+                  <v-btn
+                    block="block"
+                    type="submit"
+                  >
+                    Sign in
+                  </v-btn>
                 </v-form>
               </v-card-text>
             </v-card>
-          </v-flex>
-        </v-layout>
+          </v-col>
+        </v-row>
       </v-container>
     </v-content>
   </main>
 </template>
 
 <script>
-export default {
-  data: () => ({
-    username: "",
-    password: "",
-    error: false
-  }),
-  methods: {
+  export default {
+    data: () => ({
+      username: '',
+      password: '',
+      error: false,
+    }),
+    methods: {
 
     },
-};
+  }
 </script>
 
 <style>
